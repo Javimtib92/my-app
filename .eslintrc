@@ -29,7 +29,9 @@
         "prettier/prettier": "error",
         "react/jsx-uses-react": "off",
         "react/jsx-filename-extension": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     },
     "overrides": [
         {
