@@ -2,13 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const testing = 'wow';
+  const name = "Developer";
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello <code>{name}</code> nice to meet you.
         </p>
         <a
           className="App-link"
