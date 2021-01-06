@@ -1,34 +1,60 @@
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+
 import './App.css'
 import logo from './logo.svg'
 
-function App() {
-  const name = 'Developer'
+const queryClient = new QueryClient()
 
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img
-          src={logo}
-          className="App-logo"
-          alt="logo"
-          what="on"
-          the=""
-          name=""
-        />
-        <p>
-          Hello <code>{name}</code> nice to meet you.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Example />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   )
 }
 
-export default App
+function Example() {
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch(
+      'https://api.github.com/repos/tannerlinsley/react-query',
+    ).then((res) => res.json()),
+  )
+
+  if (isLoading) return 'Loading...'
+
+  if (error) return `An error has occurred: ${error.message}`
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <header className="App-header">
+          <img
+            src={logo}
+            className="App-logo"
+            alt="logo"
+            what="on"
+            the=""
+            name=""
+          />
+          <div>
+            <h1>{data.name}</h1>
+            <p>{data.description}</p>
+            <strong>👀 {data.subscribers_count}</strong>{' '}
+            <strong>✨ {data.stargazers_count}</strong>{' '}
+            <strong>🍴 {data.forks_count}</strong>
+          </div>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    </QueryClientProvider>
+  )
+}
