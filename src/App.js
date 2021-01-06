@@ -1,8 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
 function App() {
-  const name = "Developer";
+  const name = 'Developer'
 
   return (
     <div className="App">
@@ -21,7 +21,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

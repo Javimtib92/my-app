@@ -25,8 +25,8 @@
             "version": "detect"
         }
     },
-    "ignorePatterns": ["node_modules/"],
     "rules": {
+        "prettier/prettier": "error",
         "react/jsx-uses-react": "off",
         "react/jsx-filename-extension": "off",
         "react/react-in-jsx-scope": "off"
