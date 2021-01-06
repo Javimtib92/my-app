@@ -28,7 +28,8 @@
             "alias": [
               ["@ui", "./src/ui"],
               ["@api", "./src/api"],
-              ["@config", "./src/config"]
+              ["@config", "./src/config"],
+              ["@utils", "./src/utils"]
             ]
           }
     },
