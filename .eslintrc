@@ -23,7 +23,14 @@
     "settings": {
         "react": {
             "version": "detect"
-        }
+        },
+        "import/resolver": {
+            "alias": [
+              ["@ui", "./src/ui"],
+              ["@api", "./src/api"],
+              ["@config", "./src/config"]
+            ]
+          }
     },
     "rules": {
         "prettier/prettier": "error",

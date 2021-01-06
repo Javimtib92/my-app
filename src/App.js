@@ -1,3 +1,4 @@
+import { getReactQueryRepoData } from '@api/github'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
@@ -16,11 +17,7 @@ export default function App() {
 }
 
 function Example() {
-  const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch(
-      'https://api.github.com/repos/tannerlinsley/react-query',
-    ).then((res) => res.json()),
-  )
+  const { isLoading, error, data } = useQuery('repoData', getReactQueryRepoData)
 
   if (isLoading) return 'Loading...'
 
