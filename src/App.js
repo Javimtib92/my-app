@@ -1,4 +1,5 @@
 import { getReactQueryRepoData } from '@api/github'
+import { Link } from '@ui'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
@@ -42,14 +43,13 @@ function Example() {
             <strong>✨ {data.stargazers_count}</strong>{' '}
             <strong>🍴 {data.forks_count}</strong>
           </div>
-          <a
-            className="App-link"
+          <Link
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
+          </Link>
         </header>
       </div>
     </QueryClientProvider>
