@@ -1,7 +1,6 @@
 import Navbar from '@components/Navbar/Navbar'
-import About from '@pages/About'
-import Example from '@pages/Example'
 import { Flex } from '@ui'
+import { lazy, Suspense } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,6 +9,9 @@ import {
 } from 'react-router-dom'
 
 import './Navigation.scss'
+
+const About = lazy(() => import('@pages/About'))
+const Example = lazy(() => import('@pages/Example'))
 
 export default function Navigation() {
   return (
@@ -52,16 +54,18 @@ export default function Navigation() {
           }
         />
 
-        {/* A <Switch> looks through its children <Route>s and
+        <Suspense fallback={<div>Loading...</div>}>
+          {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Example />
-          </Route>
-        </Switch>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <Example />
+            </Route>
+          </Switch>
+        </Suspense>
       </div>
     </Router>
   )
