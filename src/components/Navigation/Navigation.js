@@ -9,20 +9,31 @@ import {
   NavLink,
 } from 'react-router-dom'
 
+import './Navigation.scss'
+
 export default function Navigation() {
   return (
     <Router>
-      <div>
+      <div className="navigation">
         <Navbar
           leftLinks={
             <Flex>
               <div style={{ marginRight: '16px' }}>
-                <NavLink to="/" activeClassName="selected">
+                <NavLink
+                  to="/"
+                  exact
+                  className="navigation__link"
+                  activeClassName="selected"
+                >
                   Home
                 </NavLink>
               </div>
               <div>
-                <NavLink to="/about" activeClassName="selected">
+                <NavLink
+                  to="/about"
+                  className="navigation__link"
+                  activeClassName="selected"
+                >
                   About
                 </NavLink>
               </div>
@@ -30,7 +41,11 @@ export default function Navigation() {
           }
           rightLinks={
             <div>
-              <NavLink to="/menu" activeClassName="selected">
+              <NavLink
+                to="/menu"
+                className="navigation__link"
+                activeClassName="selected"
+              >
                 Menu
               </NavLink>
             </div>

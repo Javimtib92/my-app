@@ -1,0 +1,11 @@
+@import 'styles/colors.scss';
+
+.navigation {
+    &__link {
+        color: $color-white;
+
+        &.selected {
+            color: $color-blue;
+        }
+    }
+}
