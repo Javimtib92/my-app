@@ -1,15 +1,15 @@
-import Navigation from '@components/Navigation/Navigation'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 import './App.scss'
+import AppRouter from './AppRouter'
 
 const queryClient = new QueryClient()
 
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Navigation />
+      <AppRouter />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )

@@ -8,7 +8,8 @@
       "@config": ["./src/config"],
       "@utils": ["./src/utils"],
       "@pages": ["./src/pages"],
-      "@components": ["./src/components"]
+      "@components": ["./src/components"],
+      "@hooks": ["./src/hooks"]
     }
   },
   "exclude": ["node_modules", "**/node_modules/*", "build"]

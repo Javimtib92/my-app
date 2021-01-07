@@ -22,7 +22,7 @@ export default function Navigation() {
             <Flex>
               <div className="navigation__item">
                 <NavLink
-                  to="/"
+                  to="/home"
                   exact
                   className="navigation__link"
                   activeClassName="selected"
