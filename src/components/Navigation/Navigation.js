@@ -18,7 +18,7 @@ export default function Navigation() {
         <Navbar
           leftLinks={
             <Flex>
-              <div style={{ marginRight: '16px' }}>
+              <div className="navigation__item">
                 <NavLink
                   to="/"
                   exact
@@ -28,7 +28,7 @@ export default function Navigation() {
                   Home
                 </NavLink>
               </div>
-              <div>
+              <div className="navigation__item">
                 <NavLink
                   to="/about"
                   className="navigation__link"
@@ -40,7 +40,7 @@ export default function Navigation() {
             </Flex>
           }
           rightLinks={
-            <div>
+            <div className="navigation__item">
               <NavLink
                 to="/menu"
                 className="navigation__link"

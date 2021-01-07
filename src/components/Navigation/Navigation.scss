@@ -1,6 +1,9 @@
 @import 'styles/colors.scss';
 
 .navigation {
+    &__item {
+        margin: 0 8px;
+    }
     &__link {
         color: $color-white;
 
