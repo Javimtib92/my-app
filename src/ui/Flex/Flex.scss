@@ -1,0 +1,42 @@
+.ui-components {
+    &__flex {
+       display: flex;
+   
+       &.row {
+           flex-flow: row;
+       }
+       &.column {
+           flex-flow: column;
+       }
+   
+       &.align {
+           &-flex-start {
+               align-items: flex-start;
+           }
+           &-center {
+               align-items: center;
+           }
+           &-flex-end {
+               align-items: flex-end;
+           }
+       }
+   
+       &.justify {
+           &-flex-start {
+               justify-content: flex-start;
+           }
+           &-center {
+               justify-content: center;
+           }
+           &-flex-end {
+               justify-content: flex-end;
+           }
+           &-space-between {
+               justify-content: space-between;
+           }
+           &-space-around {
+               justify-content: space-around;
+           }
+       }
+    }
+   }

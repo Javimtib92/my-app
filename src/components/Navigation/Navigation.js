@@ -6,7 +6,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link as RouterLink,
+  NavLink,
 } from 'react-router-dom'
 
 export default function Navigation() {
@@ -17,22 +17,22 @@ export default function Navigation() {
           leftLinks={
             <Flex>
               <div style={{ marginRight: '16px' }}>
-                <RouterLink to="/" style={{ color: 'white' }}>
+                <NavLink to="/" activeClassName="selected">
                   Home
-                </RouterLink>
+                </NavLink>
               </div>
               <div>
-                <RouterLink to="/about" style={{ color: 'white' }}>
+                <NavLink to="/about" activeClassName="selected">
                   About
-                </RouterLink>
+                </NavLink>
               </div>
             </Flex>
           }
           rightLinks={
             <div>
-              <RouterLink to="/menu" style={{ color: 'white' }}>
+              <NavLink to="/menu" activeClassName="selected">
                 Menu
-              </RouterLink>
+              </NavLink>
             </div>
           }
         />

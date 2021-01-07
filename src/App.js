@@ -1,8 +1,8 @@
-import Navigation from '@components/Navigation'
+import Navigation from '@components/Navigation/Navigation'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
-import './App.css'
+import './App.scss'
 
 const queryClient = new QueryClient()
 

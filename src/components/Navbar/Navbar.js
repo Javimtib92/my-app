@@ -3,7 +3,7 @@ import { Flex } from '@ui'
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 
-import './Navbar.css'
+import './Navbar.scss'
 
 /** Example component for UI, this is subjective to change and the only purpose of this is to demonstrate the
  * concept of UI components

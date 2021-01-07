@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import PropTypes from 'prop-types'
 
-import './Link.css'
+import './Link.scss'
 
 /** Example component for UI, this is subjective to change and the only purpose of this is to demonstrate the
  * concept of UI components

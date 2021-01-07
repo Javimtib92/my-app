@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import './Flex.css'
+import './Flex.scss'
 
 export default function Flex(props) {
   const classes = {

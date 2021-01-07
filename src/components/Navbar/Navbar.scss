@@ -1,0 +1,10 @@
+@import 'styles/colors.scss';
+
+.ui-components {
+    &__navbar {
+        background-color: $color-blue;
+        &-container {
+            padding: 16px;
+        }
+    }
+}
