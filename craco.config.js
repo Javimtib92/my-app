@@ -15,4 +15,7 @@ module.exports = {
   webpack: {
     alias: resolvedAliases,
   },
+  babel: {
+    plugins: ['@babel/plugin-proposal-optional-chaining'],
+  },
 }
