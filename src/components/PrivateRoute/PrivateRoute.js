@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 export default function PrivateRoute({ children, ...rest }) {
   const [auth] = useLocalStorage('auth')
-  console.log(auth)
+
   return (
     <Route
       {...rest}

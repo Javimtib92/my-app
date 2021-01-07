@@ -21,7 +21,7 @@ export default function AppRouter() {
               renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            {auth && auth.token ? <Redirect to="/dashboard" /> : <Login />}
+            {auth && auth.token ? <Redirect to="/dashboard/home" /> : <Login />}
           </Route>
 
           <PrivateRoute path="/dashboard">

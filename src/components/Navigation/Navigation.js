@@ -6,6 +6,7 @@ import {
   Switch,
   Route,
   NavLink,
+  useRouteMatch,
 } from 'react-router-dom'
 
 import './Navigation.scss'
@@ -14,6 +15,8 @@ const About = lazy(() => import('@pages/About'))
 const Example = lazy(() => import('@pages/Example'))
 
 export default function Navigation() {
+  const { path, url } = useRouteMatch()
+
   return (
     <Router>
       <div className="navigation">
@@ -22,8 +25,7 @@ export default function Navigation() {
             <Flex>
               <div className="navigation__item">
                 <NavLink
-                  to="/home"
-                  exact
+                  to={`${url}/home`}
                   className="navigation__link"
                   activeClassName="selected"
                 >
@@ -32,7 +34,7 @@ export default function Navigation() {
               </div>
               <div className="navigation__item">
                 <NavLink
-                  to="/about"
+                  to={`${url}/about`}
                   className="navigation__link"
                   activeClassName="selected"
                 >
@@ -44,7 +46,7 @@ export default function Navigation() {
           rightLinks={
             <div className="navigation__item">
               <NavLink
-                to="/menu"
+                to={`${url}/menu`}
                 className="navigation__link"
                 activeClassName="selected"
               >
@@ -58,11 +60,11 @@ export default function Navigation() {
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
+            <Route path={`${path}/home`}>
               <Example />
+            </Route>
+            <Route path={`${path}/about`}>
+              <About />
             </Route>
           </Switch>
         </Suspense>

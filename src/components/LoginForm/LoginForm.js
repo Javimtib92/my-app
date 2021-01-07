@@ -36,6 +36,7 @@ export default function LoginForm() {
 
   const mutation = useMutation((userCreds) => login(userCreds), {
     onSuccess: () => {
+      // For now we just fake the token
       setToken({ token: true })
       const { from } = location.state || { from: { pathname: '/' } }
       history.replace(from)
