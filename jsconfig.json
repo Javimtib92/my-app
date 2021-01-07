@@ -6,7 +6,9 @@
       "@ui": ["./src/ui"],
       "@api": ["./src/api"],
       "@config": ["./src/config"],
-      "@utils": ["./src/utils"]
+      "@utils": ["./src/utils"],
+      "@pages": ["./src/pages"],
+      "@components": ["./src/components"]
     }
   },
   "exclude": ["node_modules", "**/node_modules/*", "build"]

@@ -29,15 +29,19 @@
               ["@ui", "./src/ui"],
               ["@api", "./src/api"],
               ["@config", "./src/config"],
-              ["@utils", "./src/utils"]
+              ["@utils", "./src/utils"],
+              ["@pages", "./src/pages"],
+              ["@components", "./src/components"]
             ]
           }
     },
     "rules": {
         "prettier/prettier": "error",
+        "no-use-before-define": "off",
         "react/jsx-uses-react": "off",
         "react/jsx-filename-extension": "off",
         "react/react-in-jsx-scope": "off",
+        "react/require-default-props": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn"
     },

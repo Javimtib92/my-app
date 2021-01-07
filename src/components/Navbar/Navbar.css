@@ -1,0 +1,8 @@
+.ui-components__navbar {
+    background-color: crimson;
+    height: 56px;
+}
+
+.ui-components__navbar-container {
+    padding: 16px;
+}
