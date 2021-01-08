@@ -16,6 +16,6 @@ module.exports = {
     alias: resolvedAliases,
   },
   babel: {
-    plugins: ['@babel/plugin-proposal-optional-chaining'],
+    plugins: ['@babel/plugin-proposal-optional-chaining', 'babel-plugin-ramda'],
   },
 }

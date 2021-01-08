@@ -9,7 +9,7 @@ export default function Example() {
 
   if (isLoading) return 'Loading...'
 
-  if (error) return `An error has occurred: ${error.message}`
+  if (error) return `An error has occurred: ${error.messages[0]?.message}`
 
   return (
     <div className="App">

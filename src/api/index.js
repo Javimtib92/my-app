@@ -1,5 +1,6 @@
-// import AuthContext from '@context/AuthContext'
+/* eslint-disable prefer-promise-reject-errors */
 import axios from 'axios'
+import { mergeDeepRight } from 'ramda'
 
 export const BASE_URL = `https://api.github.com/`
 // eslint-disable-next-line import/prefer-default-export
@@ -11,11 +12,11 @@ function parseError(messages) {
   // error
   if (messages) {
     if (messages instanceof Array) {
-      return Promise.reject(new Error({ messages }))
+      return Promise.reject({ messages })
     }
-    return Promise.reject(new Error({ messages: [messages] }))
+    return Promise.reject({ messages: [messages] })
   }
-  return Promise.reject(new Error({ messages: ['Server error'] }))
+  return Promise.reject({ messages: ['Server error'] })
 }
 
 /**
@@ -31,7 +32,16 @@ function parseBody(response) {
 
 // request header
 API.interceptors.request.use(
-  (config) => config,
+  (config) => {
+    const auth = JSON.parse(window.localStorage.getItem('auth'))
+    if (false) {
+      return mergeDeepRight(config, {
+        headers: { Authorization: auth.token },
+      })
+    }
+
+    return config
+  },
   (error) => Promise.reject(error),
 )
 
