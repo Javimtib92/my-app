@@ -23,6 +23,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "build-stats": "craco build -- --stats && npx webpack-bundle-analyzer ./build/bundle-stats.json",
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint ./ --ignore-path .gitignore",
