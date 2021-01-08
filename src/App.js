@@ -12,8 +12,8 @@ export default function App() {
   // We get the token and the setter to set the token on demand
   const [token, setToken] = useLocalStorage('auth')
 
-  const storeToken = () => {
-    setToken({ token: true })
+  const storeToken = (newToken) => {
+    setToken({ token: newToken })
   }
 
   return (

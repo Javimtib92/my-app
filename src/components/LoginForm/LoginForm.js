@@ -19,11 +19,14 @@ const schema = yup.object().shape({
 
 export default function LoginForm() {
   const { storeToken } = useAuth()
+
   const [loading, setLoading] = useState(false)
   const [authError, setAuthError] = useState(null)
+
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   })
+
   const location = useLocation()
   const history = useHistory()
 
@@ -35,9 +38,9 @@ export default function LoginForm() {
   }
 
   const mutation = useMutation((userCreds) => login(userCreds), {
-    onSuccess: () => {
-      // For now we just fake the token
-      storeToken({ token: true })
+    onSuccess: (data) => {
+      storeToken(data.headers.Authorization)
+
       const { from } = location.state || { from: { pathname: '/' } }
       history.replace(from)
     },
