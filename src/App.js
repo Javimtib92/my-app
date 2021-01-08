@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthContext.Provider value={{ isLoggedIn: !!token, storeToken }}>
+      <AuthContext.Provider value={{ isLoggedIn: !!token, token, storeToken }}>
         <AppRouter />
         <ReactQueryDevtools initialIsOpen={false} />
       </AuthContext.Provider>
