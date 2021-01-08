@@ -6,6 +6,7 @@ const aliases = (prefix = `src`) => ({
   '@pages': `${prefix}/pages`,
   '@components': `${prefix}/components`,
   '@hooks': `${prefix}/hooks`,
+  '@context': `${prefix}/context`,
 })
 
 module.exports = aliases

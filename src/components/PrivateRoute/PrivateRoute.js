@@ -1,15 +1,15 @@
-import { useLocalStorage } from '@hooks'
+import { useAuth } from '@hooks'
 import PropTypes from 'prop-types'
 import { Route, Redirect } from 'react-router-dom'
 
 export default function PrivateRoute({ children, ...rest }) {
-  const [auth] = useLocalStorage('auth')
+  const { isLoggedIn } = useAuth()
 
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        auth && auth.token ? (
+        isLoggedIn ? (
           children
         ) : (
           <Redirect

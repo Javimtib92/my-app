@@ -1,5 +1,5 @@
 import PrivateRoute from '@components/PrivateRoute/PrivateRoute'
-import { useLocalStorage } from '@hooks'
+import { useAuth } from '@hooks'
 import { lazy, Suspense } from 'react'
 import {
   BrowserRouter as Router,
@@ -12,7 +12,7 @@ const Login = lazy(() => import('@pages/Login'))
 const Navigation = lazy(() => import('@components/Navigation/Navigation'))
 
 export default function AppRouter() {
-  const [auth] = useLocalStorage('auth')
+  const { isLoggedIn } = useAuth()
 
   return (
     <Router>
@@ -21,7 +21,7 @@ export default function AppRouter() {
               renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/">
-            {auth?.token ? <Redirect to="/dashboard/home" /> : <Login />}
+            {isLoggedIn ? <Redirect to="/dashboard/home" /> : <Login />}
           </Route>
 
           <PrivateRoute path="/dashboard">
